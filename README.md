@@ -29,3 +29,25 @@
       1. _playground/_ -> _hello/_ -> _say_hello()_
       2. _playground/_ -> _hello_html_/ -> _say_hello_html()_
       3. _playground/_ -> _bye_html/_ -> _say_bye_html()_
+---
+5. startapp _kda_
+   1. Terminal
+      1. python manage.py startapp kda
+   2. helloidol/settings.py
+      1. 'kda', in INSTALLED_APPS
+   3. kda/
+      1. views
+         1. show_ari()
+         2. show_akali()
+      2. templates/kda/
+         1. ari.html
+            1. title: kda - ari
+            2. h1: kda
+            3. h2: ari
+            4. img: ari 프로필 사진
+               1. border-radius: 50%
+         2. akali.html
+      3. urls
+         1. kda/ -> ari/ -> show_ari()
+         2. kda/ -> akali/ -> show_akali()
+   
