@@ -39,15 +39,18 @@
       1. views
          1. show_ari()
          2. show_akali()
+         3. -> templates에 context전달
       2. templates/kda/
-         1. ari.html
+         1. ~ari.html~
             1. title: kda - ari
             2. h1: kda
             3. h2: ari
             4. img: ari 프로필 사진
                1. border-radius: 50%
-         2. akali.html
+         2. ~akali.html~
+         3. 멤버.html
+            1. group_name, name, img_src
       3. urls
          1. kda/ -> ari/ -> show_ari()
          2. kda/ -> akali/ -> show_akali()
-   
+         
