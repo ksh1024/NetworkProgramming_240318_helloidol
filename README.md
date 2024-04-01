@@ -40,6 +40,7 @@
          1. show_ari()
          2. show_akali()
          3. -> templates에 context전달
+         4. 정보를 하나로 묶고, 거기에서 꺼내오자
       2. templates/kda/
          1. ~ari.html~
             1. title: kda - ari
