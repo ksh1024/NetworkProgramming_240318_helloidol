@@ -42,6 +42,7 @@
          3. -> templates에 context전달
          4. 정보를 하나로 묶고, 거기에서 꺼내오자
          5. show_멤버()
+         6. image link -> image file(static)
       2. templates/kda/
          1. ~~ari.html~~
             1. title: kda - ari
@@ -52,8 +53,11 @@
          2. ~~akali.html~~
          3. 멤버.html
             1. group_name, name, img_src
+            2. {% load static %} <img src="{%static img_src%}">
       3. urls
          1. ~~kda/ -> ari/ -> show_ari()~~
          2. ~~kda/ -> akali/ -> show_akali()~~
          3. kda/ -> <멤버>/ -> show_멤버(멤버)
+      4. static/kda/images/
+         1. akali.jpg, ari.jpg, kaisa.jpg
          
