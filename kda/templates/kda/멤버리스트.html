@@ -1,16 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kda - 멤버리스트</title>
-</head>
-<body>
-{{ members }}
+
+{#{{ members }}#}
+{% extends 'base.html' %}
+{%  block title %}kda - 멤버리스트{% endblock %}
+
+{% block content %}
 <h1>{{ members.0.group_name }} - 멤버리스트</h1>
-<table  border="1">
+<table  class="table">
     <tr>
          <th>이름 https</th>
          <th>이름 ../</th>
@@ -31,8 +26,6 @@
         <td><img src="{% static member.img_src %}" alt="" style="height: 100px; border-radius: 50%;"></td>
     </tr>
 {% endfor %}
-
-
 </table>
-</body>
-</html>
+
+{% endblock %}

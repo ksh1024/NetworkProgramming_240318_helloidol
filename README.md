@@ -35,34 +35,54 @@
       1. python manage.py startapp kda
    2. helloidol/settings.py
       1. 'kda', in INSTALLED_APPS
-   3. kda/
-      1. views
-         1. ~~show_ari()~~
-         2. ~~show_akali()~~
-         3. -> templates에 context전달
-         4. 정보를 하나로 묶고, 거기에서 꺼내오자
-         5. show_멤버()
-         6. image link -> image file(static)
-         7. show_멤버리스트()
-      2. templates/kda/
-         1. ~~ari.html~~
-            1. title: kda - ari
-            2. h1: kda
-            3. h2: ari
-            4. img: ari 프로필 사진
-               1. border-radius: 50%
-         2. ~~akali.html~~
-         3. 멤버.html
-            1. group_name, name, img_src
-            2. `{% load static %} <img src="{%static img_src%}">`
-         4. 멤버리스트.html
-            1. {% url '앱이름:path이름' %}
-            2. {% url '앱이름:path이름' 변수=값 %}
-      3. urls
-         1. ~~kda/ -> ari/ -> show_ari()~~
-         2. ~~kda/ -> akali/ -> show_akali()~~
-         3. kda/ -> <멤버>/ -> show_멤버(멤버)
-         4. kda/ -> 멤버리스트/ -> show_멤버리스트()
-      4. static/kda/images/
-         1. akali.jpg, ari.jpg, kaisa.jpg
+6. kda/
+   1. views
+      1. ~~show_ari()~~
+      2. ~~show_akali()~~
+      3. -> templates에 context전달
+      4. 정보를 하나로 묶고, 거기에서 꺼내오자
+      5. show_멤버()
+      6. image link -> image file(static)
+      7. show_멤버리스트()
+   2. templates/kda/
+      1. ~~ari.html~~
+         1. title: kda - ari
+         2. h1: kda
+         3. h2: ari
+         4. img: ari 프로필 사진
+            1. border-radius: 50%
+      2. ~~akali.html~~
+      3. 멤버.html
+         1. group_name, name, img_src
+         2. `{% load static %} <img src="{%static img_src%}">`
+         3. ```
+            {% extends 'base.html' %}
+            {% block title %}{% endblock %}
+            {% block content %}{% endblock %}
+            ```
+      4. 멤버리스트.html
+         1. {% url '앱이름:path이름' %}
+         2. {% url '앱이름:path이름' 변수=값 %}
+         3. ```
+            {% extends 'base.html' %}
+            {% block title %}{% endblock %}
+            {% block content %}{% endblock %}
+            ```
+   3. urls
+      1. ~~kda/ -> ari/ -> show_ari()~~
+      2. ~~kda/ -> akali/ -> show_akali()~~
+      3. kda/ -> <멤버>/ -> show_멤버(멤버)
+      4. kda/ -> 멤버리스트/ -> show_멤버리스트()
+   4. static/kda/images/
+      1. akali.jpg, ari.jpg, kaisa.jpg
+7. template/
+   1. base.html
+      ``` 
+      {% block title %}{% endblock %}
+      {% block css %}{% endblock %}
+      {% block content %}{%endblock %}
+      ```
+8. hellodiol/
+   1. in TEMPLATES in settings.py
+      1. 'DIRS':[BASE_DIR / 'templates'],
          
